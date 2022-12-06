@@ -5,9 +5,9 @@ document.body.appendChild(JokeBlock);
 JokeBlock.classList.add("joke");
 let EmojiBlock = document.createElement("p");
 document.body.appendChild(EmojiBlock);
-EmojiBlock.style.display = "none";
+EmojiBlock.style.display = "";
 
-const emojis = ['😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃']
+
 
 function ErrJoke() {
     JokeBlock.style.display = "block";
@@ -22,7 +22,7 @@ button.addEventListener("click", () => {
     .then ((data) => {
     JokeBlock.textContent = data.value;
     JokeBlock.style.display = "block";
-     EmojiBlock.textContent = emojis[ Math.floor(Math.random() * emojis.length)];
+    EmojiBlock.textContent = emojis[ Math.floor(Math.random() * emojis.length)];
     EmojiBlock.style.display = "block";
     return JokeBlock.textContent;})
     .catch((err) => ErrJoke())
